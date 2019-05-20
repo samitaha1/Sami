@@ -55,7 +55,6 @@ background-color: black;
     color: black;
     width: 80%;
     height: 80%;
-    text-space: 3px;
     text-indent: 70px;
     text-transform: uppercase;
     padding: 40px;
@@ -88,23 +87,7 @@ background-color: black;
     width: 100%;
     color: violet;
 }
-.photo ul{
-    list-style: none;
-    cursor: pointer;
 
-}
-.photo ul li{
-    position: relative;
-    width:calc(100%/8);
-    float: left;
-    transition: all 1s;
-}
-.photo ul:hover li{
-    width: calc((100% - 700px)/7);
-}
-.photo ul li:hover{
-    width: 700px;
-}
   .video {
       width: 50%;
       height: 50%;
@@ -112,6 +95,36 @@ background-color: black;
     line-height: 1;
     border: none;
 }
+#box img{
+			width: 100%;
+			height: 500px;
+		}
+		 #slider{
+		 	width: 1000px;
+		 	height: 517px;
+		 	margin: 20px auto;
+		 	position: relative;
+		 	border: 10px solid white;
+		 	box-shadow: 0 0 5px 2px #ccc;
+		 }
+		 button{
+		 	padding: 20px;
+		 	border: none;
+		 	background: #37f;
+		 	font-size: 30px;
+		 	color: white;
+		 	position: absolute;
+		 	top:45%;
+		 	cursor: pointer;
+		 }
+
+        .next{
+        	border-radius: 10px 0 0 10px;
+        	margin-left: 930px;
+        }
+        .prew{
+        	border-radius: 0 10px 10px 0;
+        }
   .video iframe{
       text-align: center;
       position: absolute;
@@ -243,7 +256,6 @@ background-image: url("https://www.harmoniabagan.co.il/wp-content/uploads/2017/0
     background-repeat: no-repeat;
     background-position: initial;
 }
-
 table{
     position: center;
     border-collapse: inherit;
@@ -272,6 +284,12 @@ th{
 tr td{
     color: dodgerblue;
 }
+td:hover{
+    background-color: yellow;
+}
+th:hover{
+    background-color: yellow;
+}
 .map{
     position: initial;
     text-align: center;
@@ -289,6 +307,7 @@ tr td{
 }
 
 .container{
+    background-color:black;
     position: initial;
     left: 50%;
     top: 50%;
@@ -298,13 +317,16 @@ tr td{
     box-shadow: 0 0 30px 0 #ddd;
     perspective: 1000px;
 }
+.aba{
+    background-color: black;
+}
 .form{
     position: absolute;
-    left:0;
+    left:100%;
     top: 0;
-    width: 442%;
+    width: 150%;
     height: 100%;
-    background-color: #00362e;
+    background-color: #161a1a;
     transform-style: preserve-3d;
     border:1px solid #000;
 }
@@ -314,7 +336,7 @@ tr td{
 background-color: #ffcc00;
     font-family:fantasy;
     font-size: 28px;
-    color: #00362e;
+    color: red;
 }
 .form .input-container {
     padding: 10px ;
@@ -324,16 +346,45 @@ background-color: #ffcc00;
     position: relative;
     font-size: 27px;
     line-height: 0;
-    color: silver;
+    color: #f1f1f1;
 }
  .form .input-box .input{
-    width: 97%;
+    width: 100%;
+    height: 54px;
+     color:dodgerblue;
+    padding: 0 35px -13px 50px;
+    font-size: 26px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid dodgerblue;
+}
+.form .input-box #mobileNumber{
+     width: 97%;
     height: 68px;
     padding: 0 35px -13px 50px;
     font-size: 32px;
     border: none;
     background-color: transparent;
-    border-bottom: 1px solid #ffcc00;
+    border-bottom: 1px solid dodgerblue;
+}
+.form .input-box #coue{
+    width: 49%;
+    height: 68px;
+    padding: 0 35px -13px 50px;
+    font-size: 32px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid dodgerblue;
+}
+.form .input-box #emails{
+     width: 97%;
+    height: 68px;
+    padding: 0 35px -13px 50px;
+    font-size: 32px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid dodgerblue;
+    
 }
  .form .input-box select{
      width: 100%;
@@ -342,7 +393,7 @@ background-color: #ffcc00;
      font-size: 28px;
      border: none;
      background-color: transparent;
-     border-bottom: 1px solid #ffcc00;
+     border-bottom: 1px solid dodgerblue;
  }
 .form .input-box option{
     margin: 10px 0;
@@ -352,27 +403,32 @@ background-color: #ffcc00;
 color: dodgerblue;
 }
 .form .input-box textarea{
-    width: 100%;
-    height: 40px;
-    padding: 0 35px -13px 50px;
-    font-size: 28px;
+    width: 25%;
+    border: white;
+    height: 133px;
+    padding: 1 25px -13px 50px;
+    font-size: 25px;
     border: none;
-    background-color: transparent;
-    border-bottom: 1px solid #ffcc00;
+    background-color: white;
+}
+.form .input-box .{
+    width: 2%;
+    border: white;
+    height: 1px;
+    padding: 1 25px -13px 50px;
+    font-size: 25px;
+    border: none;
+    background-color: red;
 }
 
-
-.form .submit{
-     width: 10%;
-     margin-left: 45%;
-     border-radius: 70%;
-     padding: 8px 1rem;
-     font-size: 16px;
+.container button{
+     width: 20%;
+     margin-left:50%;
+     border-radius: 100%;
+     padding: 6px 0rem;
+     font-size: 18px;
      border: none;
-     -moz-border-radius: initial;
-     background-color: #ffcc00;
-     color: #00362e;
-     margin-top: 20px;
+     margin-top: 342px;
      cursor: pointer;
  }
 
@@ -391,4 +447,97 @@ footer h2{
     list-style-type: disc;
     margin: 1px 0 1em;
     padding-left: 40px;
+}
+.btn-primary{
+    color: #f1f1f1;
+    background-color: dodgerblue;
+    border-color:dodgerblue;
+}
+.popup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,1,0.90);
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.64 ease-in-out;
+}
+    
+.popup_inner{
+    position: relative;
+    bottom: -100vw;
+    right: -100vh;
+    display: flex;
+    align-items: center;
+    max-width: 902px;
+    max-height: 600px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform: rotate(32deg);
+    transition: 0.64 ease-in-out;
+}
+.popup_photo{
+    display: block;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.popup_photo img{
+    width: 100%;
+    height: 100%;
+}
+.popup_text{
+    display:table;
+    position: fixed
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 100%;
+    height: 106%;
+    font-size:22px;
+    margin-bottom: 4rem;
+    color: dodgerblue;
+}
+.popup:target{
+    visibility: inherit;
+    opacity: 1;
+}
+.popup:target .popup_inner{
+    bottom: 0;
+    right: 0;
+    transform: rotate(0);
+}
+.popup_close{
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    border-radius: 100%;
+    background-color: deepskyblue;
+    z-index: 4;
+    color: #fff;
+    line-height: 3rem;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+.popup_form{
+   position: static;
+    width: 100%;
+    height: 66%;
+    background-color: black;
+    transform-style: preserve-3d;
+    border:80px solid #000;
 }

@@ -3,12 +3,14 @@
 <head>
     <title> Hinoma auditorium</title>
     <link rel="stylesheet" type="text/css" href="st.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Assistant|Frank+Ruhl+Libre|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Assistant|Frank+Ruhl+Libre|Open+Sans|Satisfy" rel="stylesheet">
 
 </head>
-<body>
+<body onmouseleave="window.alert('bye bye')" >
 <section>
     <div class="wwe">
     <div class="logo">
@@ -19,7 +21,7 @@
         <br>
         <br>
         <br>
-        <h1> Hinooma    <i class="fas fa-heart"> </i> Hall
+        <h1> Hinooma  <i class="fas fa-heart"> </i> Hall
             <br>
             <br>
             <i class="fas fa-heart"></i>
@@ -29,10 +31,10 @@
     </div>
 <div class="ground">
     <div class="event5">
-        <p> about Hinoma <i class="fas fa-info-circle"></i> </p>
+        <p onmouseover="scaleup(this,'30px')" onmouseout="scaleup(this,'20px')"> about Hinoma <i class="fas fa-info-circle"></i> </p>
         <br>
         <br>
-        <p> אודות
+        <p onmouseover="scaleup(this,'30px')" onmouseout="scaleup(this,'20px')"> אודות
             <br>
             <br>
             מתחם גני האירועים הינומה מארח אירועים יפים, יוקרתיים ומושקעים במיוחד. המקום משלב באופן מושלם בין עיצוב מודרני ומרשים, שירות מוביל, שעומד בסטנדרטים גבוהים ומנות גורמה, שמפתיעות את כל האורחים. המתחם מתאפיין במראה אלגנטי ואותנטי ומצד שני, בולט בשילוב הצבעים הנועז שלו, שיוצר הרמוניה לכל החושים.
@@ -60,33 +62,15 @@
     </div>
     <div class="photo">
         <h1> photo inside hinooma <i class="fas fa-images"></i> </h1>
-        <ul>
-            <li>
-                <img src="http://hinooma.mitchatnim.co.il/img/0353/453.jpg" alt="">
-            </li>
-            <li>
-                <img src="http://hinooma.mitchatnim.co.il/img/0353/460.jpg" alt="">
-            </li>
-            <li>
-                <img src="http://hinooma.mitchatnim.co.il/img/0353/462.jpg" alt="">
-            </li>
-            <li>
-                <img src="http://hinooma.mitchatnim.co.il/img/0353/445.jpg" alt="">
-            </li>
-            <li>
-                <img src="http://hinooma.mitchatnim.co.il/img/0353/454.jpg" alt="">
-            </li>
-            <li>
-                <img src="http://hinooma.mitchatnim.co.il/img/0353/437.jpg" alt="">
-            </li>
-            <li>
-                <img src="http://hinooma.mitchatnim.co.il/img/0353/441.jpg" alt="">
-            </li>
-            <li>
-                <img src="http://hinooma.mitchatnim.co.il/img/0353/442.jpg" alt="">
-            </li>
-
-        </ul>
+        <div id="slider">
+<div id="box">
+<img src="http://hinooma.mitchatnim.co.il/img/0353/437.jpg">
+</div>
+<button class="prew fa fa-chevron-left" onclick="prewImage()"></button>
+<button class="next fa fa-chevron-right" onclick="nextImage()"></button>
+</div>
+<br>
+<br>    
     </div>
     <br>
     <br>
@@ -131,7 +115,6 @@
         </div>
         <br>
     <div class="table">
-
         <table>
             <tr>
                 <th> Address </th>
@@ -198,29 +181,35 @@
     </div>
 
     </div>
-
+<div class="aba">
     <div class="container">
         <div class="form from-login">
             <h1> SIGN UP <i class="fas fa-sign-in-alt"></i> </h1>
+            			<form action="#" onsubmit="return validation()">
             <div class="input-container">
                 <div class="input-box">
-                    <i class="fas fa-user"></i> <input type="text" placeholder="full name" class="input" required >
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="full name" class="input" name="user" id="user" autocomplete="off">
+                    <span id="username"></span>
             </div>
             <div class="input-box">
                 <i class="fas fa-sort-numeric-up"></i>
-                <input type="number" placeholder="how much guest" class="input" required>
+                <input type="number" placeholder="how much guest" class="input" id="gues" autocomplete="off"name="gues">
+                <span id="numb"> </span>
             </div>
                 <div class="input-box">
                     <i class="fas fa-phone"></i>
-                    <input type="number" placeholder="your phone number" class="input" minlength="9" maxlength="10" required>
+                    <input type="text" name="mobile" placeholder="please insert you phone" id="mobileNumber" autocomplete="off">
+                    <span id="mobileno"> </span>
                 </div>
                 <div class="input-box">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="your email" class="input" required>
+                    <input type="text" name="email" placeholder="please fill your mail" id="emails" autocomplete="off">
+					<span id="emailids"> </span>
                 </div>
                 <div class="input-box">
                     <i class="fas fa-train"></i>
-                    <label for="inputPre">select </label>
+                    <label for="inputPre"> select </label>
                     <select id="inputPre" class="form-control">
                     <option> select </option>
                         <option> tahna markzit bear sheva </option>
@@ -232,27 +221,56 @@
                 </div>
                 <div class="input-box">
                     <i class="fas fa-comment"></i>
-                    <input type="text" placeholder="additional comment" class="input" minlength="9" maxlength="400">
+                    <label> Additional text </label>
+                <textarea class="control" id="coue" rows="5" cols="60" onkeyup="count_down(this);">
+                    </textarea>
+                    <span class="mute" id="count"> 200 </span>
                 </div>
                 <br>
                 <br>
-                <br>
-                <form action="mailto:zhr.tam@hotmail.com" method="post" enctype="text/plain">
-                <button class="submit" type="button" name="button"> Submit </button>
-                </form>
+                <button type="submit" id="ske" class="btn btn-primary"> Submit </button>
             </div>
+            </form>
         </div>
     </div>
-
+</div>
     <div class="footer">
         <footer>
         <h2>
              <i class="far fa-copyright"></i> all right reserved by  <a href="https://github.com/samitaha1"> Sami Taha </a> 2019 ---
-                <a href="mailto:zhr.tam@hotmail.com"> Contact Us </a>
-
+            <a href="#popup"> Contact Us </a>
+    <div class="popup" id="popup">
+    <div class="popup_inner">
+        <div class="popup_photo">
+        <img src="https://scontent.ftlv2-1.fna.fbcdn.net/v/t1.0-9/16864783_1650270345275156_3095443956964943419_n.jpg?_nc_cat=104&_nc_ht=scontent.ftlv2-1.fna&oh=86bcc36f096fc8e4b940fae3be2cbe23&oe=5D717E4B" alt="">
+        </div>
+        <a href="" class="popup_close"> X </a>
+        <div class="popform">
+            <br>
+            <br>
+            <div class="popup_text">
+        <h1> please fill the double container to contact us </h1>
+        </div>
+            <div class="popup_form">
+            <form>
+            <label> your email addres: </label>
+                <input type="text" name="email" class="form-control" id="emailpop" autocomplete="off">
+        <span id="emailpop" class="text-danger font-weight-bold"> </span>
+            <br>
+            <label> Message </label>
+    <textarea class="control" rows="7" cols="22"></textarea>
+                <br>
+                <br>
+                    <input type="submit" name="submit" value="submit" class="btn btn-success" 	autocomplete="off">
+            </form>
+                </div>
+        </div>
+        </div>
+    </div>
         </h2>
         </footer>
     </div>
 </section>
+    <script src="scr11.js"></script>
 </body>
 </html>
